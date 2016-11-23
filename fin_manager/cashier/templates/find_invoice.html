@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 {% extends 'base.html' %}
 {% block content %}
 
-<body class="gray-bg">
+    <body class="gray-bg">
     <div class="wrapper wrapper-content animated fadeInRight">
 
         <div class="row">
@@ -12,21 +12,21 @@
                     <div class="ibox-title">
                         <h5>发票</h5>
                         <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
+                            {#                            <a class="collapse-link">#}
+                            {#                                <i class="fa fa-chevron-up"></i>#}
+                            {#                            </a>#}
                             <a class="dropdown-toggle" data-toggle="dropdown" href="find_invoice.html#">
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="find_invoice.html#">选项1</a>
+                                <li><a href="find_invoice.html#">创建发票</a>
                                 </li>
-                                <li><a href="find_invoice.html#">选项2</a>
+                                <li><a href="find_invoice.html#">发票审核</a>
                                 </li>
                             </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
+                            {#                            <a class="close-link">#}
+                            {#                                <i class="fa fa-times"></i>#}
+                            {#                            </a>#}
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -49,74 +49,94 @@
                                         <input type="radio" id="option3" name="options">月</label>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="input-group">
-                                    <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
-                                </div>
+                            <div class="col-sm-2 m-b-xs">
+                                <select class="input-sm form-control input-s-sm inline">
+                                    <option value="0">状态</option>
+                                    <option value="1">处理中</option>
+                                    <option value="2">已发送</option>
+                                    <option value="3">已批准</option>
+                                </select>
                             </div>
+                            <div class="col-sm-4 m-b-xs">
+                                <div class="form-group">
+                                    <label class="font-noraml"></label>
+                                    <div class="input-group">
+                                        <select data-placeholder="选择Party" class="chosen-select" multiple
+                                                style="width:350px;" tabindex="4">
+                                            <option value="110000" hassubinfo="true">童文戟</option>
+                                            <option value="120000" hassubinfo="true">沈寅麟</option>
+                                            <option value="120000" hassubinfo="true">冯浩</option>
+                                            <option value="120000" hassubinfo="true">李宁电子商务有限公司</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="button" class="btn btn-sm btn-primary"> 搜索</button>
+
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                <tr>
 
-                                        <th>发票编号</th>
-                                        <th>发票类型</th>
-                                        <th>创建日期</th>
-                                        <th>状态</th>
-                                        <th>会员</th>
-                                        <th>金额</th>
-                                        <th>说明</th>
-                                    </tr>
+                                    <th>发票编号</th>
+                                    <th>发票类型</th>
+                                    <th>创建日期</th>
+                                    <th>状态</th>
+                                    <th>会员</th>
+                                    <th>金额</th>
+                                    <th>说明</th>
+                                </tr>
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-{#                                        <td>#}
-{#                                            <input type="checkbox" checked class="i-checks" name="input[]">#}
-{#                                        </td>#}
-                                        <td>001</td>
-                                        <td>工资单</td>
-                                        <td>2014.11.11</td>
-                                        </td>
-                                        <td>20%</td>
-                                        <td>张文文</td>
-{#                                        <td><a href="find_invoice.html#"><i class="fa fa-check text-navy"></i></a>#}
-{#                                        </td>#}
-                                        <td>1000</td>
-                                        <td>说明被吃掉了</td>
-                                    </tr>
-                                    <tr>
-                                        <td>002</td>
-                                        <td>工资单</td>
-                                        <td>2014.11.11
-                                        </td>
-                                        <td>40%</td>
-                                        <td>沈寅麟</td>
-                                        <td>1000</td>
-                                        <td>说明被吃掉了</td>
-                                    </tr>
-                                    <tr>
-                                        <td>003</td>
-                                        <td>工资单</td>
-                                        <td>2014.11.11
-                                        </td>
-                                        <td>75%</td>
-                                        <td>刘泽明</td>
-                                        <td>1000</td>
-                                        <td>说明被吃掉了</td>
-                                    </tr>
-                                    <tr>
-                                        <td>004</td>
-                                        <td>工资单</td>
-                                        <td>2014.11.11
-                                        </td>
-                                        <td>18%</td>
-                                        <td>苏本坤</td>
-                                        <td>999000</td>
-                                        <td>说明被吃掉了</td>
-                                    </tr>
+                                <tr>
+                                    {#                                        <td>#}
+                                    {#                                            <input type="checkbox" checked class="i-checks" name="input[]">#}
+                                    {#                                        </td>#}
+                                    <td>001</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11</td>
+                                    </td>
+                                    <td>20%</td>
+                                    <td>张文文</td>
+                                    {#                                        <td><a href="find_invoice.html#"><i class="fa fa-check text-navy"></i></a>#}
+                                    {#                                        </td>#}
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>40%</td>
+                                    <td>沈寅麟</td>
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                </tr>
+                                <tr>
+                                    <td>003</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>75%</td>
+                                    <td>刘泽明</td>
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>18%</td>
+                                    <td>苏本坤</td>
+                                    <td>999000</td>
+                                    <td>说明被吃掉了</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -129,9 +149,11 @@
     </div>
 
     <script>
-        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+        $(document).ready(function () {
+            $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green",})
+        });
     </script>
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-</body>
+    </body>
 {% endblock %}
 </html>
