@@ -11,6 +11,10 @@ def find_invoice(request):
 def audit_invoice(request):
     return render(request,'audit_invoice.html',{})
 
-# create payment
-def create_payment(request):
-    return render(request,'create_payment.html',{})
+# create invoice layout
+def create_invoice(request):
+    return render(request, 'create_invoice.html', {})
+
+# update invoice status layout
+def update_invoice_status(request):
+    return render(request, 'update_invoice_status.html', {})

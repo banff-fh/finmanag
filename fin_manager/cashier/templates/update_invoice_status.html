@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block content %}
+
+    <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>开始管理支付...</h5>
+                        <div class="ibox-tools">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="find_invoice.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="find_invoice.html#">创建发票</a>
+                                </li>
+                                <li><a href="find_invoice.html#">发票审核</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-5 m-b-xs">
+                                <select class="input-sm form-control input-s-sm inline">
+                                    <option value="0">付款剩余天数..</option>
+                                    <option value="1">1</option>
+                                    <option value="2">3</option>
+                                    <option value="3">7</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 m-b-xs">
+                                <div data-toggle="buttons" class="btn-group">
+                                    <label class="btn btn-sm btn-white">
+                                        <input type="radio" id="option1" name="options">天</label>
+                                    <label class="btn btn-sm btn-white active">
+                                        <input type="radio" id="option2" name="options">周</label>
+                                    <label class="btn btn-sm btn-white">
+                                        <input type="radio" id="option3" name="options">月</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 m-b-xs">
+                                <div class="form-group">
+                                    <label class="font-noraml"></label>
+                                    <div class="input-group">
+                                        <select data-placeholder="选择Party.." class="chosen-select" multiple
+                                                style="width:350px;" tabindex="4">
+                                            <option value="110000" hassubinfo="true">童文戟</option>
+                                            <option value="120000" hassubinfo="true">沈寅麟</option>
+                                            <option value="120000" hassubinfo="true">冯浩</option>
+                                            <option value="120000" hassubinfo="true">李宁电子商务有限公司</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 m-b-xs">
+                                <div class="form-group">
+                                    <label class="font-noraml"></label>
+                                    <div class="input-group">
+                                        <select data-placeholder="选择支付方法.." class="chosen-select" multiple
+                                                style="width:350px;" tabindex="4">
+                                            <option value="110000" hassubinfo="true">小额备用金</option>
+                                            <option value="120000" hassubinfo="true">班富电子商务中行账户</option>
+                                            <option value="120000" hassubinfo="true">班富科技中行账户</option>
+                                            <option value="120000" hassubinfo="true">个人账户童文戟</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 m-b-xs">
+                                <div class="form-group">
+                                    <label class="font-noraml"></label>
+                                    <div class="input-group">
+                                        <select data-placeholder="选择支付状态.." class="chosen-select" multiple
+                                                style="width:350px;" tabindex="4">
+                                            <option value="110000" hassubinfo="true">处理中</option>
+                                            <option value="120000" hassubinfo="true">已发送</option>
+                                            <option value="120000" hassubinfo="true">已支付</option>
+                                            <option value="120000" hassubinfo="true">已确认</option>
+                                            <option value="120000" hassubinfo="true">作废</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-sm-4 m-b-xs" style="float: right">
+                            <button type="button" class="btn btn-sm btn-primary"> 搜索</button>
+                             </div>
+
+                        </div>
+                        <div class="table-responsive">
+                            <div class="btn-group hidden-xs" style="float: right" id="exampleToolbar" role="group">
+                                    <button type="button" class="btn btn-outline btn-default" title="发送">
+                                        <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="支付">
+                                        <i class="glyphicon glyphicon-bitcoin" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="确认">
+                                        <i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-default" title="作废">
+                                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>发票编号</th>
+                                    <th>发票类型</th>
+                                    <th>创建日期</th>
+                                    <th>状态</th>
+                                    <th>会员</th>
+                                    <th>金额</th>
+                                    <th>说明</th>
+                                    <th><input type="checkbox"></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    {#                                        <td>#}
+                                    {#                                            <input type="checkbox" checked class="i-checks" name="input[]">#}
+                                    {#                                        </td>#}
+                                    <td>001</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11</td>
+                                    </td>
+                                    <td>20%</td>
+                                    <td>张文文</td>
+                                    {#                                        <td><a href="find_invoice.html#"><i class="fa fa-check text-navy"></i></a>#}
+                                    {#                                        </td>#}
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                    <td>
+                                            <input type="checkbox" checked class="i-checks" name="input[]">
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>40%</td>
+                                    <td>沈寅麟</td>
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                    <td>
+                                            <input type="checkbox" checked class="i-checks" name="input[]">
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>003</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>75%</td>
+                                    <td>刘泽明</td>
+                                    <td>1000</td>
+                                    <td>说明被吃掉了</td>
+                                    <td>
+                                            <input type="checkbox" checked class="i-checks" name="input[]">
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>工资单</td>
+                                    <td>2014.11.11
+                                    </td>
+                                    <td>18%</td>
+                                    <td>苏本坤</td>
+                                    <td>999000</td>
+                                    <td>说明被吃掉了</td>
+                                    <td>
+                                            <input type="checkbox" checked class="i-checks" name="input[]">
+                                        </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green",})
+        });
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+    </body>
+{% endblock %}
+</html>
