@@ -18,3 +18,8 @@ def create_invoice(request):
 # update invoice status layout
 def update_invoice_status(request):
     return render(request, 'update_invoice_status.html', {})
+
+# create invoice item
+def create_invoice_item(request):
+    return render(request, 'create_invoice_item.html', {})
+
