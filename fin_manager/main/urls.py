@@ -19,4 +19,8 @@ from . import views
 urlpatterns = [
     #财务管理首页
     url(r'^home/', views.home, name='home'),
+    #登录页面
+    url(r'^login/', views.login,name='login'),
+    #调用登录服务
+    url(r'^doLogin/', views.doLogin,name='doLogin'),
 ]

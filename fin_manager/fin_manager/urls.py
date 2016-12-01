@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^main/',include('main.urls')),
     url(r'^cashier/',include('cashier.urls')),
+    url(r'^account/',include('account.urls')),
 ]
