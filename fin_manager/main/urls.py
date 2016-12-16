@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^login/', views.login,name='login'),
     #调用登录服务
     url(r'^doLogin/', views.doLogin,name='doLogin'),
+    #注销登录
+    url(r'^logout/', views.logout,name='logout'),
 ]
